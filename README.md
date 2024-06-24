@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+####
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Explination file architecture
 
-Currently, two official plugins are available:
+Components: React components - the main UI building blocks;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Hooks: Custom React hooks for shared logic.
 
-## Expanding the ESLint configuration
+Contexts/providers: Contains React Contexts and Providers
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Utils: Utilties for universal logic that is not related to business logic or any technologies. eg string manipulations, mathematic calculations, etc...
 
-- Configure the top-level `parserOptions` property like this:
+lib: Utilities that are related to certain technologies eg DOM manipulations HTML
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+styles: Contains global CSS or CSS-in-JS
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+types: For general TypeScript types, enums and interfaces
+
+configs: Configs for the application ( eg: environment variables )
+
+constants: Constant, unchanged values (export const MINUTES_PER_HOUR = 60)
+
+api: For logic that communicates with the server(s)
+graphql: GraphQL-specific code.
+
+state/store: Global state management logic( Zustand, Valtio, Jotai, ...)
+
+Routing:
+routes/router: Defining router
+
+Tests: Unit tests and others kinds of tests for your code.
