@@ -1,14 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Base from "../Base";
 import Home from "../public/Home";
 import Signup from "../public/Signup";
 import Signin from "../public/Signin";
+import Layout from "../Layout";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Base />,
+		element: <Layout />,
 		children: [
 			{ index: true, element: <Home /> },
 			{
