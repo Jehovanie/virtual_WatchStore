@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import image_1 from "./../../../assets/images/image_1.jpg";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+
+import image_1 from "@assets/images/image_1.jpg";
 
 const Product = () => {
 	return (

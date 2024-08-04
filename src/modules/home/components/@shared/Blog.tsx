@@ -1,9 +1,9 @@
-import image_3 from "./../../../assets/images/image_3.jpg";
+import image_3 from "@assets/images/image_3.jpg";
 
 const Blog = () => {
 	return (
-		<div className="relative max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-			<img className="rounded-t-lg" src={image_3} alt="" />
+		<div className="relative max-sm:w-full h-44 sm:w-full md:max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+			<img className="rounded-t-lg w-full h-full" src={image_3} alt="" />
 			<div className="absolute top-0 left-0 right-0 p-5 w-full h-full flex justify-center items-center">
 				<div className="text-center">
 					<button

@@ -1,4 +1,4 @@
-import asidebar from "./../../../assets/images/aside_bar_home.png";
+import asidebar from "@assets/images/aside_bar_home.png";
 
 const AsideBarHome = () => {
 	return (

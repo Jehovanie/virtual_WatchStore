@@ -1,9 +1,10 @@
-import Footer from "../../../@share/components/Footer";
-import AsideBarHome from "./AsideBarHome";
-import Navbar from "./Navbar";
-import SomeBlog from "./SomeBlog";
-import SomeProduct from "./SomeProduct";
-import SuggestionProduct from "./SuggestionProduct";
+import Footer from "@shareGlobal/components/Footer";
+
+import AsideBarHome from "./@shared/AsideBarHome";
+import Navbar from "./@shared/Navbar";
+import SomeBlog from "./@shared/SomeBlog";
+import SomeProduct from "./@shared/SomeProduct";
+import SuggestionProduct from "./@shared/SuggestionProduct";
 
 const HomeComponent = () => {
 	return (

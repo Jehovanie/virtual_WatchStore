@@ -1,4 +1,4 @@
-import image_1 from "./../../../assets/images/image_1.jpg";
+import image_1 from "@assets/images/image_1.jpg";
 
 const CardProductSuggest = () => {
 	return (
