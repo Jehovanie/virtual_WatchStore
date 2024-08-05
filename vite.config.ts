@@ -9,7 +9,7 @@ export default defineConfig({
 		alias: {
 			"@": resolve(__dirname, "src"), // Alias for src directory
 			"@assets": resolve(__dirname, "src/assets"), // Alias for assets directory
-			"@shareGlobal": resolve(__dirname, "src/@share"), // Alias for components directory
+			"@shared": resolve(__dirname, "src/_shared"), // Alias for components directory
 			// Add more aliases as needed
 		},
 	},
