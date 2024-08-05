@@ -62,7 +62,7 @@ const NavBarShareComponents = () => {
 						</button>
 						<div
 							id="dropdownNavbar"
-							className="z-10 hidden absolute top-5 left-12 font-thin bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+							className="z-10 hidden absolute top-5 left-12 font-thin bg-white divide-y divide-gray-100 shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
 						>
 							<ul
 								className="py-2 text-sm text-gray-700 dark:text-gray-400"

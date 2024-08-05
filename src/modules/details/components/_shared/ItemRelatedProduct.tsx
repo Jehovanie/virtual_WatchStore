@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-import image_1 from "@assets/images/image_1.jpg";
+import image_2 from "@assets/images/image_2.jpg";
 
-const Product = () => {
+const ItemRelatedProduct = () => {
 	return (
 		<div className="w-full md:max-w-sm bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
-			<img className="p-8 rounded-t-lg w-96 h-96 mx-auto" src={image_1} alt="product image" />
+			<img className="p-8 rounded-t-lg w-56 h-64 mx-auto" src={image_2} alt="product image" />
 			<div className="px-5 pb-5">
 				<a href="/detail">
 					<h5 className="text-xl font-thin tracking-tight text-gray-900 dark:text-white">
@@ -37,4 +37,4 @@ const Product = () => {
 	);
 };
 
-export default Product;
+export default ItemRelatedProduct;
