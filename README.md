@@ -29,3 +29,5 @@ Routing:
 routes/router: Defining router
 
 Tests: Unit tests and others kinds of tests for your code.
+
+//// For each module: components [ @shared, IndexComponents]; hooks, lib, services, lib, states, utilis, payment.
