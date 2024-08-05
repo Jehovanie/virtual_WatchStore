@@ -1,5 +1,5 @@
-import Footer from "@shared/components/Footer";
 
+import Footer from "../../../_shared/components/Footer";
 import AsideBarHome from "./_shared/AsideBarHome";
 import Navbar from "./_shared/Navbar";
 import SomeBlog from "./_shared/SomeBlog";
