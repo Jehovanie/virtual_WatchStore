@@ -10,12 +10,12 @@ const DetailsComponents = () => {
 			<div className="content_nav_bard max-w-screen-xl max-sm:mx-4 mx-3 xl:mx-auto ">
 				<Navbar />
 			</div>
-			<div className="content_nav_bread_crumb mb-16">
+			<div className="content_nav_bread_crumb max-sm:mb-6 sm:mb-8 md:mb-16">
 				<NavBreadCrumb />
 			</div>
 			<div className="content_nav_bard max-w-screen-xl max-sm:mx-4 mx-3 xl:mx-auto">
 				<DetailsContent />
-				<hr className="my-16"/>
+				<hr className="my-16" />
 			</div>
 
 			<div className="content_nav_bard max-w-screen-xl max-sm:mx-4 mx-3 xl:mx-auto mb-16">

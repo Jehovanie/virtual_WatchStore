@@ -1,14 +1,17 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faBookmark, faScaleBalanced } from "@fortawesome/free-solid-svg-icons";
+
 import { useState } from "react";
 
 const ShortDescription = () => {
 	const [quantity, setQuantity] = useState(0);
 
-	const handleChangeQuantity = (value: Number) => {
+	const handleChangeQuantity = (value: React.SetStateAction<number>) => {
 		setQuantity(value);
 	};
 
 	return (
-		<div className="w-full px-16">
+		<div className="w-full max-sm:px-4 sm:px-4 md:px-16">
 			<ul className="space-y-4 text-left text-gray-500 dark:text-gray-400 mb-8">
 				<li className="flex items-center space-x-3 rtl:space-x-reverse">
 					<span>
@@ -61,22 +64,26 @@ const ShortDescription = () => {
 					<span className="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">15</span>
 				</div>
 			</div>
+
 			<div className=" mt-16 mb-8 w-full flex items-center justify-between">
 				<a
 					href="#"
-					className="w-1/4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-					Add to cart
+					className="max-sm:w-1/3 sm:w-1/3 md:w-1/4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				>
+					<FontAwesomeIcon icon={faCartShopping} />
 				</a>
 
 				<a
 					href="#"
-					className="w-1/4 text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-					Compare
+					className="max-sm:w-1/3 sm:w-1/3 w-1/4 text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				>
+					<FontAwesomeIcon icon={faScaleBalanced} />
 				</a>
 				<a
 					href="#"
-					className="w-1/4 text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-					Save
+					className="max-sm:w-1/3 sm:w-1/3 w-1/4 text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+				>
+					<FontAwesomeIcon icon={faBookmark} />
 				</a>
 			</div>
 		</div>
