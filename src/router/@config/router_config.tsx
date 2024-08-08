@@ -13,7 +13,7 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <Home /> },
 			{
-				path: "detail",
+				path: "detail/:watchID",
 				element: <Details />,
 			},
 			{

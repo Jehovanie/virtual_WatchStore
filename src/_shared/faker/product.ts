@@ -70,7 +70,7 @@ export const watches = [
 		brand: "Tag Heuer",
 		model: "Carrera",
 		type: "Automatic",
-		price: 4500,
+		price: 780,
 		bestSeler: 0,
 		material: "Stainless Steel",
 		waterResistance: true,

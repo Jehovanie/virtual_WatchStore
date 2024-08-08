@@ -1,6 +1,15 @@
+import { WatchModel } from "@/_shared/models";
 import asidebar from "@assets/images/aside_bar_home.png";
 
-const AsideBarHome = () => {
+interface AsideBarHomeProps {
+	watch: WatchModel | undefined;
+}
+
+const AsideBarHome: React.FC<AsideBarHomeProps> = ({ watch }) => {
+	if (watch === undefined) {
+		return <h2>hello Jehovenie</h2>;
+	}
+
 	return (
 		<div className="w-full h-full bg-blue-500">
 			<div className="relative h-full w-full">
@@ -12,7 +21,9 @@ const AsideBarHome = () => {
 						<div className="w-1/2 max-sm:w-full sm:w-2/3 md:w-1/2">
 							<h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-6xl dark:text-white">
 								FROM{" "}
-								<mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">$450.00</mark>{" "}
+								<mark className="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">
+									$ {watch.price.toString()}
+								</mark>{" "}
 								discount over the mouth.
 							</h1>
 							<h1 className="mb-4 text-md font-bold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-2xl dark:text-white">

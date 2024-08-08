@@ -1,6 +1,11 @@
+import { WatchModel } from "@/_shared/models";
 import { useState } from "react";
 
-const LongDescription = () => {
+interface WatchProps {
+	watch: WatchModel;
+}
+
+const LongDescription: React.FC<WatchProps> = ({ watch }) => {
 	const [isShowDescription, setIsShwoDescription] = useState(true);
 	const [isShowReview, setIsShwoReview] = useState(false);
 

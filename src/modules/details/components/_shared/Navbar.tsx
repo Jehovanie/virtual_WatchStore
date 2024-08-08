@@ -1,4 +1,4 @@
-import NavBarShareComponents from "../../../../_shared/components/NavBarShareComponents";
+import NavBarShareComponents from "@/_shared/components/NavBarShareComponents";
 
 const Navbar = () => {
 	return <NavBarShareComponents />;

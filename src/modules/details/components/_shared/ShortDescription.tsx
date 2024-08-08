@@ -2,8 +2,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faBookmark, faScaleBalanced } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
+import { WatchModel } from "@/_shared/models";
 
-const ShortDescription = () => {
+interface WatchProps {
+	watch: WatchModel;
+}
+
+const ShortDescription: React.FC<WatchProps> = ({ watch }) => {
 	const [quantity, setQuantity] = useState(0);
 
 	const handleChangeQuantity = (value: React.SetStateAction<number>) => {
@@ -15,28 +20,32 @@ const ShortDescription = () => {
 			<ul className="space-y-4 text-left text-gray-500 dark:text-gray-400 mb-8">
 				<li className="flex items-center space-x-3 rtl:space-x-reverse">
 					<span>
-						Model: <span className="font-semibold text-gray-900 dark:text-white">1 developer</span>
+						Model: <span className="font-semibold text-gray-900 dark:text-white">{watch.model}</span>
 					</span>
 				</li>
 				<li className="flex items-center space-x-3 rtl:space-x-reverse">
 					<span>
-						Type: <span className="font-semibold text-gray-900 dark:text-white">6 months</span>
+						Brand: <span className="font-semibold text-gray-900 dark:text-white">{watch.brand}</span>
 					</span>
 				</li>
 				<li className="flex items-center space-x-3 rtl:space-x-reverse">
 					<span>
-						Free updates: <span className="font-semibold text-gray-900 dark:text-white">6 months</span>
+						Type: <span className="font-semibold text-gray-900 dark:text-white">{watch.type}</span>
+					</span>
+				</li>
+				<li className="flex items-center space-x-3 rtl:space-x-reverse">
+					<span>
+						Material: <span className="font-semibold text-gray-900 dark:text-white">{watch.material}</span>
 					</span>
 				</li>
 			</ul>
 			<div className="mb-8">
-				<h2 className="text-2xl font-thing dark:text-white">Payments tool for companies</h2>
-				<h2 className="text-4xl font-light text-gray-500 dark:text-white my-4">$450.00</h2>
+				<h2 className="text-2xl font-thing dark:text-white">
+					{watch.model} {watch.brand}
+				</h2>
+				<h2 className="text-4xl font-light text-gray-500 dark:text-white my-4">${watch.price.toString()}</h2>
 				<hr className="mb-4" />
-				<p className="my-4 text-thing text-gray-500">
-					Start developing with an open-source library of over 450+ UI components, sections, and pages built
-					with the utility classes from Tailwind CSS and designed in Figma.
-				</p>
+				<p className="my-4 text-thing text-gray-500">{watch.description}</p>
 			</div>
 
 			<div className="mb-8">

@@ -1,16 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faCartShopping, faMagnifyingGlass, faScaleBalanced, faUser } from "@fortawesome/free-solid-svg-icons";
 
+import logo from "@/assets/logo.jpg";
+import { Link } from "react-router-dom";
+
 const NavBarShareComponents = () => {
 	return (
 		<nav className="w-full bg-white border-gray-200 dark:bg-gray-900">
 			<div className="w-full flex flex-wrap items-center justify-between py-4">
-				<a href="logo.jpg" className="flex items-center space-x-3 rtl:space-x-reverse">
-					<img src="logo.jpg" className="h-16" alt="Flowbite Logo" />
+				<Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+					<img src={logo} className="h-16" alt="Flowbite Logo" />
 					<span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
 						NobleWatchStore
 					</span>
-				</a>
+				</Link>
 				<div className="flex md:order-2 w-1/3">
 					<div className="relative w-full hidden md:block">
 						<input
