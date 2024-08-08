@@ -21,7 +21,10 @@
 		"strict": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"noFallthroughCasesInSwitch": true
-	},
-	"include": ["src"]
+		"noFallthroughCasesInSwitch": true,
+		"baseUrl": ".", // Base directory to resolve non-relative module names
+		"paths": {
+			"@/*": ["src/*"] // Map '@/' to the 'src' directory
+		}
+	}
 }
