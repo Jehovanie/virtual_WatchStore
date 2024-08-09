@@ -12,7 +12,7 @@ const RelatedProduct: React.FC<WatchListProps> = ({ watchs }) => {
 			<div className="content_list_product">
 				<div className="list_product grid grid-flow-row max-sm:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-sm:gap-1 sm:gap-1 md:gap-3 gap-4">
 					{watchs.map((watch) => (
-						<ItemRelatedProduct watch={watch} />
+						<ItemRelatedProduct key={watch.id.toString()} watch={watch} />
 					))}
 				</div>
 			</div>
