@@ -3,6 +3,7 @@ import { faCartShopping, faBookmark, faScaleBalanced } from "@fortawesome/free-s
 
 import { useState } from "react";
 import { WatchModel } from "@/_shared/models";
+import Price from "@/_shared/components/Price";
 
 interface WatchProps {
 	watch: WatchModel;
@@ -43,7 +44,7 @@ const ShortDescription: React.FC<WatchProps> = ({ watch }) => {
 				<h2 className="text-2xl font-thing dark:text-white">
 					{watch.model} {watch.brand}
 				</h2>
-				<h2 className="text-4xl font-light text-gray-500 dark:text-white my-4">${watch.price.toString()}</h2>
+				<Price price={watch.price} className="text-4xl font-light text-gray-500 dark:text-white my-4 w-20" />
 				<hr className="mb-4" />
 				<p className="my-4 text-thing text-gray-500">{watch.description}</p>
 			</div>

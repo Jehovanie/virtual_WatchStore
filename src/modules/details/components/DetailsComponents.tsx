@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import Footer from "../../../_shared/components/Footer";
 import DetailsContent from "./_shared/DetailsContent";
 import Navbar from "./_shared/Navbar";
@@ -8,14 +7,12 @@ import { WatchModel } from "@/_shared/models";
 import { useAppSelector } from "@/_config/app/hooks/hooks";
 import { getAllWatchs, selectWatchById } from "@/_config/app/features/productSlice";
 
-const DetailsComponents = () => {
-	const { watchID } = useParams();
+interface DetailsCompontentsProps {
+	watchID: Number;
+}
 
-	if (watchID === undefined) {
-		return <h4>Jehovanie error...</h4>;
-	}
-
-	const watch: WatchModel | undefined = useAppSelector((state) => selectWatchById(state, parseInt(watchID)));
+const DetailsComponents: React.FC<DetailsCompontentsProps> = ({ watchID }) => {
+	const watch: WatchModel | undefined = useAppSelector((state) => selectWatchById(state, watchID));
 
 	if (watch === undefined) {
 		return <h4>Jehovanie error...</h4>;

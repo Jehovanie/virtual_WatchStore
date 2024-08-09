@@ -10,7 +10,6 @@ import { Provider } from "react-redux";
 import "./index.css";
 import "flowbite";
 
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
 		<Provider store={store}>
