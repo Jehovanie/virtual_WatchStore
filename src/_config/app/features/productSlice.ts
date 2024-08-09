@@ -3,15 +3,9 @@ import { WatchModel } from "@/_shared/models";
 import { client } from "@/_config/api/client";
 import { createAppAsyncThunk } from "@/_config/app//withTypes";
 import { FetchStatus } from "@/_config/app/utils/EnumStatus";
-import watches from "@/_shared/faker/product";
-import { useAppSelector } from "../hooks/hooks";
+// import watches from "@/_shared/faker/product";
 
 import { RootState } from "../store";
-
-export const fetchProduct = createAppAsyncThunk("product/all", async () => {
-	const response = await client.get<WatchModel[]>("/products");
-	return response.data;
-});
 
 export interface ProductState {
 	products: WatchModel[];
@@ -19,8 +13,25 @@ export interface ProductState {
 	error: String | null;
 }
 
+export const fetchWatchs = createAppAsyncThunk(
+	"watch/fetchAll",
+	async () => {
+		const response = await client.get<any>("/api/watchs");
+		return response.data;
+	},
+	{
+		condition(arg, thunkApi) {
+			const watchStatus = getWatchStatus(thunkApi.getState());
+			if (watchStatus !== "idle") {
+				console.log(arg);
+				return false;
+			}
+		},
+	}
+);
+
 const initialState: ProductState = {
-	products: watches,
+	products: [],
 	status: "idle",
 	error: null,
 };
@@ -29,6 +40,21 @@ const productSlice = createSlice({
 	name: "product",
 	initialState,
 	reducers: {},
+	extraReducers: (builder) => {
+		builder
+			.addCase(fetchWatchs.pending, (state, action) => {
+				state.status = "pending";
+			})
+			.addCase(fetchWatchs.fulfilled, (state, action) => {
+				state.status = "succeeded";
+				// Save the fetched posts into state
+				state.products = action.payload;
+			})
+			.addCase(fetchWatchs.rejected, (state, action) => {
+				state.status = "rejected";
+				state.error = action.error.message ?? "Unknown Error";
+			});
+	},
 });
 
 export default productSlice.reducer;

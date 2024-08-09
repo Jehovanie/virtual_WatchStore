@@ -33,7 +33,7 @@ const Product: React.FC<WatchProps> = ({ watch }) => {
 				</div>
 				<div className="flex items-center justify-between">
 					<span className="text-3xl font-bold text-gray-900 dark:text-white">
-						<Price price={watch.price} className="" />
+						<Price price={parseFloat(watch.price.toString())} className="" />
 					</span>
 					<a
 						href="#"

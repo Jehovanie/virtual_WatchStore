@@ -1,11 +1,21 @@
 import { WatchModel } from "@/_shared/models";
 import Product from "./Product";
+import Spinner from "@/_shared/components/Spinner";
 
 interface WatchListProps {
 	watchs: WatchModel[];
 }
 
 const SomeProduct: React.FC<WatchListProps> = ({ watchs }) => {
+
+	if (watchs.length === 0) {
+		return (
+			<div className="flex items-center justify-center">
+				<Spinner />
+			</div>
+		);
+	}
+
 	return (
 		<div className="w-full">
 			<h4 className="text-2xl font-thin dark:text-white my-4 block">Our collection</h4>

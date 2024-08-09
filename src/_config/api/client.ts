@@ -1,3 +1,5 @@
+import { API } from "../environement/environement";
+
 interface ClientResponse<T> {
 	status: number;
 	data: T;
@@ -26,7 +28,7 @@ export async function client<T>(
 
 	let data;
 	try {
-		const response = await window.fetch(endpoint, config);
+		const response = await window.fetch(`${API}${endpoint}`, config);
 		data = await response.json();
 		if (response.ok) {
 			// Return a result object similar to Axios
