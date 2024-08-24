@@ -1,5 +1,7 @@
+import SigninComponents from "@/modules/auth/components/SigninComponents";
+
 const Signin = () => {
-	return <div>signin...</div>;
+	return <SigninComponents />;
 };
 
 export default Signin;
