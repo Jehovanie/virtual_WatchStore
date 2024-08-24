@@ -6,10 +6,10 @@ import Navbar from "./_shared/Navbar";
 import SomeBlog from "./_shared/SomeBlog";
 import SomeProduct from "./_shared/SomeProduct";
 import SuggestionProduct from "./_shared/SuggestionProduct";
-// import { WatchModel } from "@/_shared/models";
-import { fetchWatchs, getAllWatchs, getWatchStatus, selectWatchById } from "@/_config/app/features/productSlice";
+import { getWatchStatus } from "@/_config/app/features/productSlice";
 import { useEffect } from "react";
 import { useHookHomeComponent } from "../hooks/hooks";
+import { fetchWatchs } from "@/_config/app/features/AsyncThunk/fetchWatchs";
 
 const HomeComponent = () => {
 	const dispatch = useAppDispatch();

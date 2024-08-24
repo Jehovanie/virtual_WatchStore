@@ -1,34 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { WatchModel } from "@/_shared/models";
-import { client } from "@/_config/api/client";
-import { createAppAsyncThunk } from "@/_config/app//withTypes";
 import { FetchStatus } from "@/_config/app/utils/EnumStatus";
 // import watches from "@/_shared/faker/product";
 
 import { RootState } from "../store";
+import { fetchWatchs } from "./AsyncThunk/fetchWatchs";
 
 export interface ProductState {
 	products: WatchModel[];
 	status: FetchStatus;
 	error: String | null;
 }
-
-export const fetchWatchs = createAppAsyncThunk(
-	"watch/fetchAll",
-	async () => {
-		const response = await client.get<any>("/api/watchs");
-		return response.data;
-	},
-	{
-		condition(arg, thunkApi) {
-			const watchStatus = getWatchStatus(thunkApi.getState());
-			if (watchStatus !== "idle") {
-				console.log(arg);
-				return false;
-			}
-		},
-	}
-);
 
 const initialState: ProductState = {
 	products: [],

@@ -2,12 +2,17 @@ import { WatchModel } from "@/_shared/models";
 import DetailsImage from "./DetailsImage";
 import LongDescription from "./LongDescription";
 import ShortDescription from "./ShortDescription";
+import DetailsContentSkeleton from "../_sharedSkeleton/DetailsContentSkeleton";
 
 interface WatchProps {
-	watch: WatchModel;
+	watch: WatchModel | undefined;
 }
 
 const DetailsContent: React.FC<WatchProps> = ({ watch }) => {
+	if (watch === undefined) {
+		return <DetailsContentSkeleton />;
+	}
+
 	return (
 		<div className="w-full">
 			<div className="flex max-sm:flex-col sm:flex-row md:flex-row gap-2 max-sm:mb-4 sm:mb-4 md:mb-16">

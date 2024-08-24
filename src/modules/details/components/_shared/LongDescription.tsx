@@ -2,7 +2,7 @@ import { WatchModel } from "@/_shared/models";
 import { useState } from "react";
 
 interface WatchProps {
-	watch: WatchModel;
+	watch: WatchModel | undefined;
 }
 
 const LongDescription: React.FC<WatchProps> = ({ watch }) => {
@@ -24,16 +24,14 @@ const LongDescription: React.FC<WatchProps> = ({ watch }) => {
 				<li className="border border-b-0 border-gray-200 p-4 dark:border-gray-600">
 					<div
 						className="flex items-center ps-3 cursor-pointer"
-						onClick={() => toggleDescriptionReview("description")}
-					>
+						onClick={() => toggleDescriptionReview("description")}>
 						<h6 className={isShowDescription ? "text-blue-500" : ""}>DESCRIPTION</h6>
 					</div>
 				</li>
 				<li className="border border-l-0 border-b-0 border-gray-200 p-4 dark:border-gray-600">
 					<div
 						className="flex items-center ps-3 cursor-pointer"
-						onClick={() => toggleDescriptionReview("review")}
-					>
+						onClick={() => toggleDescriptionReview("review")}>
 						<h6 className={isShowReview ? "text-blue-500" : ""}>REVIEW</h6>
 					</div>
 				</li>
@@ -88,8 +86,7 @@ const LongDescription: React.FC<WatchProps> = ({ watch }) => {
 								<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 									<th
 										scope="row"
-										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-									>
+										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 										Apple MacBook Pro 17"
 									</th>
 									<td className="px-6 py-4">Silver</td>
@@ -99,8 +96,7 @@ const LongDescription: React.FC<WatchProps> = ({ watch }) => {
 								<tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
 									<th
 										scope="row"
-										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-									>
+										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 										Microsoft Surface Pro
 									</th>
 									<td className="px-6 py-4">White</td>
@@ -110,8 +106,7 @@ const LongDescription: React.FC<WatchProps> = ({ watch }) => {
 								<tr className="bg-white dark:bg-gray-800">
 									<th
 										scope="row"
-										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-									>
+										className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 										Magic Mouse 2
 									</th>
 									<td className="px-6 py-4">Black</td>

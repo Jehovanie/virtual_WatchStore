@@ -3,24 +3,27 @@ import DetailsContent from "./_shared/DetailsContent";
 import Navbar from "./_shared/Navbar";
 import NavBreadCrumb from "./_shared/NavBreadCrumb";
 import RelatedProduct from "./_shared/RelatedProduct";
-import { WatchModel } from "@/_shared/models";
-import { useAppSelector } from "@/_config/app/hooks/hooks";
-import { getAllWatchs, selectWatchById } from "@/_config/app/features/productSlice";
+import { useAppDispatch, useAppSelector } from "@/_config/app/hooks/hooks";
+import { getWatchStatus } from "@/_config/app/features/productSlice";
+import { useEffect } from "react";
+import { fetchWatchs } from "@/_config/app/features/AsyncThunk/fetchWatchs";
+import { useHookDetailsComponents } from "../hooks/hooks";
 
 interface DetailsCompontentsProps {
 	watchID: Number;
 }
 
 const DetailsComponents: React.FC<DetailsCompontentsProps> = ({ watchID }) => {
-	const watch: WatchModel | undefined = useAppSelector((state) => selectWatchById(state, watchID));
+	const dispatch = useAppDispatch();
+	const watchStatus = useAppSelector(getWatchStatus);
 
-	if (watch === undefined) {
-		return <h4>Jehovanie error...</h4>;
-	}
+	const { watch, relatedWatchs } = useHookDetailsComponents(watchID);
 
-	const all_watchs = useAppSelector(getAllWatchs);
-
-	const relatedWatchs: WatchModel[] = all_watchs.slice(0, 3);
+	useEffect(() => {
+		if (watchStatus === "idle") {
+			dispatch(fetchWatchs());
+		}
+	}, [watchStatus, dispatch]);
 
 	return (
 		<div className="w-full min-h-screen content_page">

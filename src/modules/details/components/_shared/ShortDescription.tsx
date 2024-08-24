@@ -4,9 +4,10 @@ import { faCartShopping, faBookmark, faScaleBalanced } from "@fortawesome/free-s
 import { useState } from "react";
 import { WatchModel } from "@/_shared/models";
 import Price from "@/_shared/components/Price";
+import DefaultLoader from "@/_shared/components/DefaultLoader";
 
 interface WatchProps {
-	watch: WatchModel;
+	watch: WatchModel | undefined;
 }
 
 const ShortDescription: React.FC<WatchProps> = ({ watch }) => {
@@ -15,6 +16,10 @@ const ShortDescription: React.FC<WatchProps> = ({ watch }) => {
 	const handleChangeQuantity = (value: React.SetStateAction<number>) => {
 		setQuantity(value);
 	};
+
+	if (watch === undefined) {
+		return <DefaultLoader />;
+	}
 
 	return (
 		<div className="w-full max-sm:px-4 sm:px-4 md:px-16">
@@ -81,21 +86,18 @@ const ShortDescription: React.FC<WatchProps> = ({ watch }) => {
 			<div className=" mt-16 mb-8 w-full flex items-center justify-between">
 				<a
 					href="#"
-					className="max-sm:w-1/3 sm:w-1/3 md:w-1/4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-				>
+					className="max-sm:w-1/3 sm:w-1/3 md:w-1/4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 					<FontAwesomeIcon icon={faCartShopping} />
 				</a>
 
 				<a
 					href="#"
-					className="max-sm:w-1/3 sm:w-1/3 w-1/4 text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-				>
+					className="max-sm:w-1/3 sm:w-1/3 w-1/4 text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 					<FontAwesomeIcon icon={faScaleBalanced} />
 				</a>
 				<a
 					href="#"
-					className="max-sm:w-1/3 sm:w-1/3 w-1/4 text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-				>
+					className="max-sm:w-1/3 sm:w-1/3 w-1/4 text-white bg-green-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-thin text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
 					<FontAwesomeIcon icon={faBookmark} />
 				</a>
 			</div>
