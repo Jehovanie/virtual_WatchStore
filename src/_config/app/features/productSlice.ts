@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { WatchModel } from "@/_shared/models";
 import { FetchStatus } from "@/_config/app/utils/EnumStatus";
 // import watches from "@/_shared/faker/product";
 
 import { RootState } from "../store";
 import { fetchWatchs } from "./AsyncThunk/fetchWatchs";
+import { IDLE, PENDING, REJECTED, SUCCEEDED } from "../utils/constant";
 
 export interface ProductState {
 	products: WatchModel[];
@@ -14,7 +16,7 @@ export interface ProductState {
 
 const initialState: ProductState = {
 	products: [],
-	status: "idle",
+	status: IDLE,
 	error: null,
 };
 
@@ -25,15 +27,15 @@ const productSlice = createSlice({
 	extraReducers: (builder) => {
 		builder
 			.addCase(fetchWatchs.pending, (state, action) => {
-				state.status = "pending";
+				state.status = PENDING;
 			})
 			.addCase(fetchWatchs.fulfilled, (state, action) => {
-				state.status = "succeeded";
+				state.status = SUCCEEDED;
 				// Save the fetched posts into state
 				state.products = action.payload;
 			})
 			.addCase(fetchWatchs.rejected, (state, action) => {
-				state.status = "rejected";
+				state.status = REJECTED;
 				state.error = action.error.message ?? "Unknown Error";
 			});
 	},

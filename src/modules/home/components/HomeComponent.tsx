@@ -6,6 +6,7 @@ import Navbar from "./_shared/Navbar";
 import SomeBlog from "./_shared/SomeBlog";
 import SomeProduct from "./_shared/SomeProduct";
 import SuggestionProduct from "./_shared/SuggestionProduct";
+
 import { getWatchStatus } from "@/_config/app/features/productSlice";
 import { useEffect } from "react";
 import { useHookHomeComponent } from "../hooks/hooks";
