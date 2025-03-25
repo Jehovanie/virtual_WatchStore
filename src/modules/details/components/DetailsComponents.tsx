@@ -3,6 +3,7 @@ import DetailsContent from "./_shared/DetailsContent";
 import Navbar from "./_shared/Navbar";
 import NavBreadCrumb from "./_shared/NavBreadCrumb";
 import RelatedProduct from "./_shared/RelatedProduct";
+
 import { useAppDispatch, useAppSelector } from "@/_config/app/hooks/hooks";
 import { getWatchStatus } from "@/_config/app/features/productSlice";
 import { useEffect } from "react";

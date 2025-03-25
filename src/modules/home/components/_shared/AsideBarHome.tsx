@@ -41,6 +41,4 @@ const AsideBarHome: React.FC<AsideBarHomeProps> = ({ watch }) => {
 	);
 };
 
-//md:h-[550px] max-sm:h-[270px] sm:h-[350px] max-h-[550px]
-
 export default AsideBarHome;
